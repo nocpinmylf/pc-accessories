@@ -1,0 +1,143 @@
+.header-nav {
+  @include trans(.2s);
+  position: fixed;
+  background-color: transparent;
+  padding: .2rem 0; 
+  width: 100%;
+  z-index: 10;
+
+  &>.wrap {
+    @include flex(row, center, space-between);
+    padding: 5px 10px;
+  }
+
+  &:hover {
+    background-color: $color2;
+    @include trans(.2s);
+  }
+
+  .logo { 
+    @include flex(row, center, space-between);
+    font-size: $font-size * 2;
+    user-select: none;
+
+    * {
+      font-style: normal;
+      font-weight: 900;
+      font-family: $font-logo;
+      vertical-align: super;
+    }
+
+    .word-l {
+      color: $color3;
+    }
+
+    .word-r {
+      color: $color1;
+
+    }
+  }
+
+  #collaspe-btn {
+    display: none;
+    color: $color3;
+    font-weight: 900;
+
+    @include breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+    // nav list and search
+  nav {
+    @include flex(row, center, space-between);
+    z-index: 100;
+  }
+
+    // responsive
+  @include breakpoint(tablet) {
+    background-color: $color2;
+    padding: 0;
+
+    &>.wrap {
+      @include flex(column, center, space-between);
+    }
+
+    .logo {
+      width: 100%;
+
+      &>* {
+        transform: scale(.8);
+      }
+    }
+
+    nav {
+      @include flex(column, center, center);
+      @include trans(.2s);
+      width: 100%;
+      opacity: 1;
+    }
+
+    .hide {
+      @include trans(.2s);
+      display: none;
+      overflow: hidden;
+      opacity: 0;
+
+      * {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-nav-list {
+  @include flex(row, center, center);
+
+  li {
+    cursor: pointer;
+  }
+  
+  a {
+    display: block;
+    padding: 10px 20px;
+    color: $color3;
+    font-size: $font-size + 2;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  svg {
+    margin: 0 20px; 
+    color: $color3;
+  }
+
+  @include breakpoint(tablet) {
+    @include flex(column, center, center);
+    position: relative;
+    height: auto;
+    order: 2;
+
+    &, li {
+      width: 100%;
+    }
+  }
+
+  .cart {
+    position: relative;
+
+    .number {
+      @include abCenter(-12px, 57%);
+      transform: none;
+      width: 20px;
+      height: 20px;
+      display: block;
+      border-radius: 50%;
+      font-weight: 900;
+      color: $color3;
+      background-color: $color1;
+      text-align: center;
+    }
+  }
+}

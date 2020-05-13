@@ -1,0 +1,84 @@
+@mixin trans($s) {
+  transition: all $s ease-in-out;
+}
+
+@mixin flex($dir: row, $align: initial, $jtf: initial) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $jtf;
+}
+
+@mixin abCenter($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translateX(-$left) translateY(-$top);
+}
+
+@mixin breakpoint($point) {
+  @if $point==small {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+
+  @if $point==tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+@mixin fontawesome {
+  font-family: FontAwesome;
+  text-rendering: auto;
+}
+
+//
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+@mixin draw-progress($progress, $color) {
+  .pie {
+    .half-circle {
+      border-color: $color;
+    }
+
+    .left-side {
+      transform: rotate($progress * 3.6deg);
+    }
+
+    @if $progress <=50 {
+      .right-side {
+        display: none;
+      }
+    }
+
+    @else {
+      clip: rect(auto, auto, auto, auto);
+
+      .right-side {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@mixin draw-progress--solid($progress, $color, $bg-color) {
+  background: linear-gradient(to right, $color 50%, $bg-color 50%);
+
+  &:before {
+    @if $progress <=50 {
+      background: $bg-color;
+      transform: rotate((100 - (50 - $progress)) / 100 * 360deg * -1);
+    }
+
+    @else {
+      background: $color;
+      transform: rotate((100 - $progress) / 100 * 360deg);
+    }
+  }
+}
