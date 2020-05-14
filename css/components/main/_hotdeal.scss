@@ -4,8 +4,8 @@
     @include flex(row, center, center);
     flex-wrap: wrap;
 
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .item {
@@ -44,6 +44,7 @@
       }
 
       .rate {
+        margin-top: 10px;
         color: #ffe400;
       }
 

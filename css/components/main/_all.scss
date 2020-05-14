@@ -1,7 +1,8 @@
 @import "hotdeal";
+@import "vendor";
 
 #main {
-  padding: 2rem 0;
+  padding: 3rem 0;
   border-top: 2px solid $color1;
   border-bottom: 2px solid $color1;
 
@@ -23,7 +24,6 @@
 
     &-title {
       width: 50%;
-      
       position: relative;
       text-transform: uppercase;
       font-size: $font-size * 2;
@@ -41,11 +41,13 @@
 
     &-more {
       width: 50%;
+      font-size: 1.2rem;
       text-align: end;
       margin-top: 10px;
 
       &:hover {
         color: $color1;
+        font-style: italic;
       }
     }
   }

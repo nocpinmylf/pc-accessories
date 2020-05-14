@@ -1,0 +1,16 @@
+.vendor {
+  ul {
+    margin-top: 1rem;
+    @include flex(row, center, space-between);
+    background-color: $color3;
+    overflow: hidden;
+
+    img {
+      transition: .2s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
