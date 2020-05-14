@@ -6,6 +6,10 @@
   width: 100%;
   z-index: 10;
 
+  &.show {
+    background-color: $color2-blur2;
+  }
+
   &>.wrap {
     @include flex(row, center, space-between);
     padding: 5px 10px;
@@ -16,28 +20,6 @@
     @include trans(.2s);
   }
 
-  .logo { 
-    @include flex(row, center, space-between);
-    font-size: $font-size * 2;
-    user-select: none;
-
-    * {
-      font-style: normal;
-      font-weight: 900;
-      font-family: $font-logo;
-      vertical-align: super;
-    }
-
-    .word-l {
-      color: $color3;
-    }
-
-    .word-r {
-      color: $color1;
-
-    }
-  }
-
   #collaspe-btn {
     display: none;
     color: $color3;
@@ -45,13 +27,8 @@
 
     @include breakpoint(tablet) {
       display: block;
+      transform: none;
     }
-  }
-
-    // nav list and search
-  nav {
-    @include flex(row, center, space-between);
-    z-index: 100;
   }
 
     // responsive
@@ -61,14 +38,6 @@
 
     &>.wrap {
       @include flex(column, center, space-between);
-    }
-
-    .logo {
-      width: 100%;
-
-      &>* {
-        transform: scale(.8);
-      }
     }
 
     nav {
@@ -122,22 +91,11 @@
     &, li {
       width: 100%;
     }
-  }
 
-  .cart {
-    position: relative;
-
-    .number {
-      @include abCenter(-12px, 57%);
-      transform: none;
-      width: 20px;
-      height: 20px;
+    svg {
       display: block;
-      border-radius: 50%;
-      font-weight: 900;
-      color: $color3;
-      background-color: $color1;
-      text-align: center;
+      margin: 10px auto;
+
     }
   }
 }

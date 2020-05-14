@@ -1,0 +1,29 @@
+.logo { 
+  @include flex(row, null, space-between);
+  font-size: $font-size * 2;
+  user-select: none;
+
+  * {
+    font-style: normal;
+    font-weight: 900;
+    font-family: $font-logo;
+    vertical-align: super;
+  }
+
+  .word-l {
+    color: $color3;
+  }
+
+  .word-r {
+    color: $color1;
+  }
+
+  @include breakpoint(tablet) {
+    width: 100%;
+
+    * {
+      transform: scale(.8);
+      vertical-align: baseline;
+    }
+  } 
+}
