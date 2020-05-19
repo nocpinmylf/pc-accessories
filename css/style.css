@@ -376,7 +376,7 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar {
-  width: .8vw;
+  scrollbar-width: thin;
 }
 
 ul {
@@ -1231,5 +1231,10 @@ section {
   content: "";
   color: #fff;
   font-size: 2rem;
+  cursor: pointer;
+}
+
+#close-modal:hover {
+  color: #bb3232;
 }
 /*# sourceMappingURL=style.css.map */

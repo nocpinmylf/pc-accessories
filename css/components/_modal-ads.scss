@@ -49,4 +49,9 @@
   content: "";
   color: $color3;
   font-size: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $color1;
+  }
 }
